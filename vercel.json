@@ -4,14 +4,6 @@
   "installCommand": "pnpm install --frozen-lockfile",
   "buildCommand": "pnpm run build",
   "devCommand": "pnpm run dev",
-  "functions": {
-    "app/api/**/route.ts": {
-      "runtime": "nodejs20.x"
-    },
-    "app/api/**/route.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "env": {
     "SANDBOX_PROVIDER": "vercel"
   }
