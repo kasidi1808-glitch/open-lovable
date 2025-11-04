@@ -62,6 +62,32 @@ pnpm dev  # or npm run dev / yarn dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
+## Deploying to Vercel
+
+1. **Create the project**
+   - Push this repository to your own GitHub (or GitLab/Bitbucket) account
+   - Import the repository into [Vercel](https://vercel.com/new) and select the `Next.js` framework preset (detected automatically)
+
+2. **Configure environment variables**
+   - Copy the contents of `.env.example` into Vercel's project settings under **Environment Variables**
+   - Provide values for required keys like `FIRECRAWL_API_KEY` and your preferred model provider keys
+   - Leave optional variables blank if you do not need them
+
+3. **Set the sandbox provider**
+   - `vercel.json` pins `SANDBOX_PROVIDER=vercel` so the hosted app automatically uses the Vercel Sandbox
+   - If you need to switch providers later, override the variable in the Vercel dashboard
+
+4. **Trigger the first deployment**
+   - Vercel will install dependencies with `pnpm`, run `pnpm build`, and upload the `.next` output automatically
+   - Subsequent pushes to your default branch redeploy the site with the same configuration
+
+5. **Local production preview (optional)**
+   ```bash
+   pnpm build
+   pnpm start
+   ```
+   This mirrors the build command used in Vercel for debugging before pushing changes.
+
 ## License
 
 MIT
